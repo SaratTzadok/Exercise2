@@ -1,0 +1,138 @@
+
+טבלה: 
+USE [master]
+GO
+
+/****** Object:  Table [dbo].[Users]    Script Date: 23/10/2022 17:28:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Users](
+	[Identity] [int] NOT NULL,
+	[FirstName] [nvarchar](50) NULL,
+	[LastName] [nvarchar](50) NULL,
+	[Adress] [nvarchar](50) NULL,
+	[Telephone] [nvarchar](50) NULL,
+	[Phone] [nvarchar](50) NULL,
+	[BornDate] [datetime] NULL,
+	[DateRecieveFirstVaccine] [datetime] NULL,
+	[DateRecieveSecondVaccine] [datetime] NULL,
+	[DateRecieveThirdVaccine] [datetime] NULL,
+	[DateRecieveFourthVaccine] [datetime] NULL,
+	[FirstVaccineManufacturer] [nvarchar](50) NULL,
+	[SecondVaccineManufacturer] [nvarchar](50) NULL,
+	[ThirdVaccineManufacturer] [nvarchar](50) NULL,
+	[FourthVaccineManufacturer] [nvarchar](50) NULL,
+	[DateRecievePositiveResult] [datetime] NULL,
+	[RecoveryDate] [datetime] NULL
+) ON [PRIMARY]
+GO
+
+
+פרוצדורות:
+1.
+ALTER PROCEDURE [dbo].[CreateUser]
+	
+@Identity int,
+@FirstName nvarchar(50)='',
+@LastName nvarchar(50)='',
+@BornDate datetime=null,
+@Telephone nvarchar(50)='',
+@Phone nvarchar(50)='',
+@Adress nvarchar(50)='',
+@DateRecieveFirstVaccine datetime=null,
+@DateRecieveSecondVaccine datetime=null,
+@DateRecieveThirdVaccine datetime=null,
+@DateRecieveFourthVaccine datetime=null,
+@FirstVaccineManufacturer nvarchar(50)='',
+@SecondVaccineManufacturer nvarchar(50)='',
+@ThirdVaccineManufacturer nvarchar(50)='',
+@FourthVaccineManufacturer nvarchar(50)='',
+@DateRecievePositiveResult datetime=null,
+@RecoveryDate datetime=null
+AS
+BEGIN
+
+INSERT INTO Users ([Identity], FirstName, LastName,BornDate,Telephone,Phone,Adress,DateRecieveFirstVaccine,DateRecieveSecondVaccine,
+DateRecieveThirdVaccine,DateRecieveFourthVaccine,FirstVaccineManufacturer,SecondVaccineManufacturer,ThirdVaccineManufacturer,FourthVaccineManufacturer,
+DateRecievePositiveResult,RecoveryDate)
+VALUES (@Identity, @FirstName, @LastName,@BornDate,@Telephone,@Phone,@Adress,@DateRecieveFirstVaccine,@DateRecieveSecondVaccine,
+@DateRecieveThirdVaccine,@DateRecieveFourthVaccine,@FirstVaccineManufacturer,@SecondVaccineManufacturer,@ThirdVaccineManufacturer,@FourthVaccineManufacturer,
+@DateRecievePositiveResult,@RecoveryDate)
+END
+
+2.
+ALTER PROCEDURE [dbo].[DeleteUser]
+@Identity int
+AS
+BEGIN
+delete from Users
+where [Identity]=@Identity
+END
+
+3.
+ALTER PROCEDURE [dbo].[GetAllUsers]
+
+AS
+BEGIN
+
+SELECT * from Users
+END
+
+4.
+ALTER PROCEDURE [dbo].[GetUserByID] 
+	@Identity int
+
+AS
+BEGIN
+
+  select * from Users
+where [Identity]=@Identity
+END
+
+5.
+ALTER PROCEDURE [dbo].[UpdateUser]
+
+@Identity int,
+@FirstName nvarchar(50)='',
+@LastName nvarchar(50)='',
+@BornDate datetime=null,
+@Telephone nvarchar(50)='',
+@Phone nvarchar(50)='',
+@Adress nvarchar(50)='',
+@DateRecieveFirstVaccine datetime=null,
+@DateRecieveSecondVaccine datetime=null,
+@DateRecieveThirdVaccine datetime=null,
+@DateRecieveFourthVaccine datetime=null,
+@FirstVaccineManufacturer nvarchar(50)='',
+@SecondVaccineManufacturer nvarchar(50)='',
+@ThirdVaccineManufacturer nvarchar(50)='',
+@FourthVaccineManufacturer nvarchar(50)='',
+@DateRecievePositiveResult datetime=null,
+@RecoveryDate datetime=null
+AS
+BEGIN
+UPDATE Users
+set
+FirstName=@FirstName,
+LastName=@LastName,
+BornDate=@BornDate,
+Telephone=@Telephone,
+Phone=@Phone,
+Adress=@Adress,
+DateRecieveFirstVaccine=@DateRecieveFirstVaccine,
+DateRecieveSecondVaccine=@DateRecieveSecondVaccine,
+DateRecieveThirdVaccine=@DateRecieveThirdVaccine,
+DateRecieveFourthVaccine=@DateRecieveFourthVaccine,
+FirstVaccineManufacturer=@FirstVaccineManufacturer,
+SecondVaccineManufacturer=@SecondVaccineManufacturer,
+ThirdVaccineManufacturer=@ThirdVaccineManufacturer,
+FourthVaccineManufacturer=@FourthVaccineManufacturer,
+DateRecievePositiveResult=@DateRecievePositiveResult,
+RecoveryDate=@RecoveryDate
+where [Identity]=@Identity
+END
+

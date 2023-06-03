@@ -1,0 +1,154 @@
+﻿@model WebApplication1.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Identity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BornDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BornDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRecieveFirstVaccine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRecieveFirstVaccine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRecieveSecondVaccine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRecieveSecondVaccine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRecieveThirdVaccine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRecieveThirdVaccine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRecieveFourthVaccine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRecieveFourthVaccine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstVaccineManufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstVaccineManufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondVaccineManufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondVaccineManufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThirdVaccineManufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThirdVaccineManufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FourthVaccineManufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FourthVaccineManufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRecievePositiveResult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRecievePositiveResult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecoveryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecoveryDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Identity  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
